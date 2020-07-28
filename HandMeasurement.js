@@ -16,7 +16,7 @@ let rectifiedCorner = [];
 let startLocation, endLocation;
 
 function setup() {
-  createCanvas(1024, 768);
+  createCanvas(1024, 900);
   
   
   // file input
