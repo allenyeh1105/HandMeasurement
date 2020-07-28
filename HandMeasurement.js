@@ -54,10 +54,16 @@ function draw() {
     for(let i=0; i<paperCorner.length;i++){
       point(10+paperCorner[i].x, 30+paperCorner[i].y);
     }
+    
+    rectMode(CORNER);
+    fill( 33, 47, 61 );
+    noStroke();
+    textSize(15);
+    textAlign(LEFT, TOP);
+    let description = "To use it,\n* select the photo showed hand on top of one white paper(specific size).\n* select the paper size by the drop-down list.\n* click the paper corner on the photo, the sequence need to be Top-Left, Top-right, Bottom-Left, and Bottom-Right.\n* click rectify image button."
+    text(description, 800, 120, 200, 600);
   } else if(rectifiedImage) {
       image(rectifiedImage, 10, 30);
-      //rect(0,0,600,600);
-      
       if(startLocation && endLocation){
         print("drawline");
         print(startLocation);
@@ -78,6 +84,13 @@ function draw() {
         text(lineLengthString, 0, 0);
         pop();
       }
+      rectMode(CORNER);
+        fill( 33, 47, 61 );
+        noStroke();
+        textSize(15);
+        textAlign(LEFT, TOP);
+        let description = "To use it,\n* click and drag the cursor on the rectified image, the measurement will show.";
+        text(description, 800, 120, 200, 600);
   } else {
     // create rectified graphic
     rectifiedImage = createGraphics(rectifyWidth * 2, rectifyHeight * 2, WEBGL);
